@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "moduleResolution": "node",
+    "declaration": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "types": ["vitest/globals"],
+    "removeComments": false,
+    "esModuleInterop": true,
+    "noImplicitAny": false
+  }
+}
