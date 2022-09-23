@@ -35,8 +35,13 @@
     "vitest": "^0.22.1"
   },
   "dependencies": {
+    "@prefresh/vite": "^2.2.8",
+    "fbjs": "0.5.1",
     "postcss-plugin-rpx2vw": "^1.0.0",
+    "rax": "^1.2.2",
+    "semver": "^5.5.1",
     "vite-plugin-filter-replace": "^0.1.9",
-    "vite-plugin-transform-css-modules": "^1.0.3"
+    "vite-plugin-transform-css-modules": "^1.0.3",
+    "vite-tsconfig-paths": "^3.5.0"
   }
 }

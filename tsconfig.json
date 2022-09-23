@@ -5,6 +5,7 @@
     "declaration": true,
     "skipLibCheck": true,
     "baseUrl": "./",
+    "allowJs": true,
     "types": ["vitest/globals"],
     "removeComments": false,
     "esModuleInterop": true,
