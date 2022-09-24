@@ -6,12 +6,13 @@ export default function raxHmr(): Plugin[] {
   const replacer = filterReplace(
     [
       {
-        filter: /rax.js$/,
-        replace(source, id) {
+        filter: /node_modules.+rax\/(lib\/index.js|dist\/rax.js)$/,
+        replace(source) {
           return `
           exports.options = require('${require.resolve(
             "./rax-dev-hook"
           )}').default;
+          exports.default = module.exports;
 
           ${source}
           `;

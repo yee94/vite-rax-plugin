@@ -1,4 +1,5 @@
 {
+  "name": "vite-plugin-rax-hmr",
   "version": "0.0.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -9,12 +10,10 @@
     }
   },
   "scripts": {
-    "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
-    "test": "vitest run",
-    "prettier": "pretty-quick --staged",
-    "build": "pnpm -r --filter='./packages/*' run build",
-    "play": "pnpm -C playground run dev",
-    "prepublishOnly": "npm run test && npm run build"
+    "dev": "father dev",
+    "build": "father build",
+    "prepublishOnly": "npm run build",
+    "test": "vitest --globals run"
   },
   "repository": {
     "type": "git",
@@ -29,13 +28,9 @@
     "url": "https://github.com/xiaobebe/vite-rax-plugin/issues"
   },
   "homepage": "https://github.com/xiaobebe/vite-rax-plugin#readme",
-  "devDependencies": {
-    "@types/node": "^14.14.35",
-    "father": "^4.0.0",
-    "pre-commit": "^1.2.2",
-    "prettier": "^2.7.1",
-    "pretty-quick": "^3.1.3",
-    "vite": "^3.0.0",
-    "vitest": "^0.22.1"
+  "dependencies": {
+    "@prefresh/vite": "^2.2.8",
+    "fbjs": "0.5.1",
+    "vite-plugin-filter-replace": "^0.1.9"
   }
 }
