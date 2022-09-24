@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-rax-inline-style",
-  "version": "0.0.4",
+  "version": "0.0.5-beta.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "exports": {
