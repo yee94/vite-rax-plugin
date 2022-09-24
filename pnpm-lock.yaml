@@ -42,16 +42,16 @@ importers:
 
   packages/rax:
     specifiers:
-      '@originjs/vite-plugin-commonjs': ^1.0.3
       postcss-plugin-rpx2vw: ^1.0.0
+      postcss-pxtorem: ^6.0.0
       rax: ^1.2.2
       vite-plugin-filter-replace: ^0.1.9
       vite-plugin-rax-hmr: workspace:*
       vite-plugin-rax-inline-style: workspace:*
       vite-tsconfig-paths: ^3.5.0
     dependencies:
-      '@originjs/vite-plugin-commonjs': 1.0.3
       postcss-plugin-rpx2vw: 1.0.0
+      postcss-pxtorem: 6.0.0
       rax: 1.2.2
       vite-plugin-filter-replace: 0.1.9
       vite-plugin-rax-hmr: link:../hmr
@@ -498,12 +498,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
-
-  /@originjs/vite-plugin-commonjs/1.0.3:
-    resolution: {integrity: sha512-KuEXeGPptM2lyxdIEJ4R11+5ztipHoE7hy8ClZt3PYaOVQ/pyngd2alaSrPnwyFeOW1UagRBaQ752aA1dTMdOQ==, tarball: '@originjs/vite-plugin-commonjs/download/@originjs/vite-plugin-commonjs-1.0.3.tgz'}
-    dependencies:
-      esbuild: 0.14.49
-    dev: false
 
   /@parcel/css-darwin-arm64/1.9.0:
     resolution: {integrity: sha512-f/guZseS2tNKtKw94LgpNTItZqdVA0mnznqPsmQaR5lSB+cM3IPrSV8cgOOpAS7Vwo9ggxuJartToxBBN+dWSw==}
@@ -1885,6 +1879,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-android-64/0.15.9:
@@ -1902,6 +1897,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-android-arm64/0.15.9:
@@ -1919,6 +1915,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-darwin-64/0.15.9:
@@ -1936,6 +1933,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-darwin-arm64/0.15.9:
@@ -1953,6 +1951,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-freebsd-64/0.15.9:
@@ -1970,6 +1969,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-freebsd-arm64/0.15.9:
@@ -1987,6 +1987,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-32/0.15.9:
@@ -2004,6 +2005,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-64/0.15.9:
@@ -2021,6 +2023,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-arm/0.15.9:
@@ -2038,6 +2041,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-arm64/0.15.9:
@@ -2055,6 +2059,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-mips64le/0.15.9:
@@ -2072,6 +2077,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-ppc64le/0.15.9:
@@ -2089,6 +2095,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-riscv64/0.15.9:
@@ -2106,6 +2113,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-s390x/0.15.9:
@@ -2123,6 +2131,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-netbsd-64/0.15.9:
@@ -2140,6 +2149,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-openbsd-64/0.15.9:
@@ -2157,6 +2167,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-sunos-64/0.15.9:
@@ -2174,6 +2185,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-windows-32/0.15.9:
@@ -2191,6 +2203,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-windows-64/0.15.9:
@@ -2208,6 +2221,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-windows-arm64/0.15.9:
@@ -2245,6 +2259,7 @@ packages:
       esbuild-windows-32: 0.14.49
       esbuild-windows-64: 0.14.49
       esbuild-windows-arm64: 0.14.49
+    dev: true
 
   /esbuild/0.15.9:
     resolution: {integrity: sha512-OnYr1rkMVxtmMHIAKZLMcEUlJmqcbxBz9QoBU8G9v455na0fuzlT/GLu6l+SRghrk0Mm2fSSciMmzV43Q8e0Gg==}
@@ -3856,6 +3871,12 @@ packages:
       postcss: 8.4.16
       postcss-selector-parser: 6.0.10
     dev: true
+
+  /postcss-pxtorem/6.0.0:
+    resolution: {integrity: sha512-ZRXrD7MLLjLk2RNGV6UA4f5Y7gy+a/j1EqjAfp9NdcNYVjUMvg5HTYduTjSkKBkRkfqbg/iKrjMO70V4g1LZeg==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dev: false
 
   /postcss-replace-overflow-wrap/4.0.0_postcss@8.4.16:
     resolution: {integrity: sha512-KmF7SBPphT4gPPcKZc7aDkweHiKEEO8cla/GjcBK+ckKxiZslIu3C4GCRW3DNfL0o7yW7kMQu9xlZ1kXRXLXtw==}

@@ -3,6 +3,7 @@ import filterReplace from "vite-plugin-filter-replace";
 import raxInline from "vite-plugin-rax-inline-style";
 import rpx2vw from "postcss-plugin-rpx2vw";
 import tsconfigPaths from "vite-tsconfig-paths";
+import px2rem from "postcss-pxtorem";
 
 import { UserConfig } from "vitest";
 import raxHmr from "vite-plugin-rax-hmr";
@@ -65,7 +66,13 @@ export default function raxPlugin(
           },
           css: {
             postcss: {
-              plugins: [rpx2vw()],
+              plugins: [
+                rpx2vw(),
+                px2rem({
+                  rootValue: 16,
+                  propList: ["*"],
+                }),
+              ],
             },
           },
         } as UserConfig);

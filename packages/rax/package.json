@@ -30,6 +30,7 @@
   "homepage": "https://github.com/xiaobebe/vite-rax-plugin#readme",
   "dependencies": {
     "postcss-plugin-rpx2vw": "^1.0.0",
+    "postcss-pxtorem": "^6.0.0",
     "rax": "^1.2.2",
     "vite-plugin-filter-replace": "^0.1.9",
     "vite-plugin-rax-hmr": "workspace:*",

@@ -1,10 +1,11 @@
-import { PluginOption } from "vite";
+import { PluginOption, ViteDevServer } from "vite";
 import _styleSheetLoader from "stylesheet-loader";
 
 const isCSSRequest = (request: string): boolean =>
   /\.(css|less|sass|scss|styl|stylus|pcss|postcss)($|\?)/.test(request);
 const isNodeModulesRequest = (request: string): boolean =>
   /node_modules/.test(request);
+const inlineRE = /(\?|&)inline\b/;
 
 const quotesExp = /"(.*)"/;
 
@@ -17,6 +18,7 @@ const styleSheetLoader = (source) => {
 
 export default function inlineStylePlugin(): PluginOption {
   let isDev = false;
+  let server: ViteDevServer;
 
   return {
     name: "vite-rax-inline-style",
@@ -29,10 +31,17 @@ export default function inlineStylePlugin(): PluginOption {
     configResolved(resolvedConfig) {
       isDev = resolvedConfig.command === "serve";
     },
+    configureServer(_server) {
+      server = _server;
+    },
 
     transform(code, id) {
       // rax组件兼容处理
-      if (isNodeModulesRequest(id) || /\?html-proxy/.test(id)) {
+      if (
+        isNodeModulesRequest(id) ||
+        /\?html-proxy/.test(id) ||
+        inlineRE.test(id)
+      ) {
         return code;
       }
 
@@ -43,6 +52,15 @@ export default function inlineStylePlugin(): PluginOption {
       // css文件需要css string 转换 css module
       if (isDev) {
         let targetIndex = 0;
+
+        // HMR
+        const { moduleGraph } = server;
+
+        const thisModule = moduleGraph.getModuleById(id);
+        // CSS modules cannot self-accept since it exports values
+        const isSelfAccepting = false;
+
+        thisModule.isSelfAccepting = isSelfAccepting;
 
         // 解析成数组方便操作
         const codeArr = code.split("\n");
