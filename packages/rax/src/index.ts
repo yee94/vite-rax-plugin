@@ -15,7 +15,7 @@ export interface RaxPluginOptions {
 }
 
 export default function raxPlugin(
-  { inlineStyle = true } = {} as RaxPluginOptions
+  { inlineStyle } = {} as RaxPluginOptions
 ): PluginOption {
   return [
     inlineStyle && raxInline(),
@@ -56,7 +56,24 @@ export default function raxPlugin(
       },
 
       async config(config, env) {
+        const isJsxPreserve = await (async () => {
+          try {
+            const tsconfig = await fs.readFile(
+              path.resolve(process.cwd(), "tsconfig.json"),
+              "utf-8"
+            );
+            return JSON.parse(tsconfig)?.compilerOptions?.jsx === "preserve";
+          } catch (e) {
+            return false;
+          }
+        })();
+
         return mergeConfig(config, {
+          esbuild: isJsxPreserve
+            ? {
+                jsxInject: `import { createElement } from 'rax'`,
+              }
+            : {},
           optimizeDeps: {
             esbuildOptions: {
               loader: {

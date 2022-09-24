@@ -41,7 +41,7 @@ export default function raxHmr(): Plugin[] {
         replace(source, id) {
           source = source.replace(
             /import (.+) from 'preact';/g,
-            `import $1 from 'rax';console.log($1);`
+            `import $1 from 'rax';`
           );
 
           return source;

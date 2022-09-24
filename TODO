@@ -1,4 +1,7 @@
 - [ ] rax<1.2 not work
-- [ ] inline style hotload
-- [ ] px -> rem
-- [ ] optimize html
+- [x] inline style hotload
+- [x] px -> rem
+  - 只能转带有明确px的样式，如：width: 750px;
+  - 无法支持在 style 中的样式转换
+  - 无法支持不带单位的转换，如：width: 750;
+- [x] optimize html
