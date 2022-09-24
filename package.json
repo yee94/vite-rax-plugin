@@ -2,6 +2,8 @@
   "version": "0.0.4",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "private": true,
+  "packageManager": "pnpm@7.5.0",
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
