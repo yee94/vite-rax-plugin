@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/xiaobebe/vite-rax-plugin#readme",
   "dependencies": {
-    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "postcss-plugin-rpx2vw": "^1.0.0",
     "rax": "^1.2.2",
     "vite-plugin-filter-replace": "^0.1.9",

@@ -23,13 +23,13 @@ jobs:
           cache: pnpm
 
       - name: Install
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
 
       - name: Build
         run: pnpm run build
 
-      - name: Test
-        run: pnpm run test
+      # - name: Test
+      #   run: pnpm run test
 
       - name: Publish to NPM
         run: pnpm -r publish --access public --no-git-checks
