@@ -1,0 +1,4 @@
+{
+  "type": "rax",
+  "builder": "@ali/builder-rax-v1"
+}

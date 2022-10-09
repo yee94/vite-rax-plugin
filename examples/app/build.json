@@ -1,0 +1,19 @@
+{
+  "targets": [
+    "web"
+  ],
+  "webpack5": true,
+  "web": {
+    "mpa": true,
+    "pha": true
+  },
+  "plugins": [
+    "@ali/build-plugin-rax-app-def",
+    [
+      "@ali/build-plugin-event-tracking-register",
+      {
+        "goldlog": false
+      }
+    ]
+  ]
+}
